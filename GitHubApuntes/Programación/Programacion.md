@@ -807,7 +807,7 @@ public class TablaMultiplicar {
 }
 ```
 
-- CORREGIDO
+- v2 Sin Bucles
 
 ```java
 	static void resultadoTabla(int numero, byte aux) {
@@ -975,7 +975,7 @@ XOR = ^
 0110 ~n1 = 1001
 `
 
-desplazar bits a la derecha o a la izquierda y rellenar con 0
+desplazar bits a la derecha o a la izquierda y rellenar con 0 (REVISAR)
 
 a = 10001101
 b = 00110101
@@ -1181,5 +1181,178 @@ public class Round {
 ### Operadores
 
 ```java
+public class Operadores {
+
+	public static void main(String[] args) {
+		/*
+		 * AND OR ETC...
+		 * 
+		 */
+		
+		short a=4;
+		short b=57;
+		short c=28;
+		
+		System.out.println(a&b);
+
+		System.out.println(15|200);
+		System.out.println(15>>2);
+		System.out.println(200<<3);
+		System.out.println(~15);
+		System.out.println(~-45);
+		System.out.println(~(142&35)^24);
+	}
+
+}
+
+```
+
+AND OR XOR EJEMPLOS ETC (CUADERNO)
+
+### Operaciones
+
+```java 
+public class Operaciones {
+	
+	
+	static void suma(int a, int b) {
+		System.out.println(a+" + "+b+" = "+(a+b));
+	}
+	
+	static void resta(int a, int b) {
+		System.out.println(a+" - "+b+" = "+(a-b));
+	}
+	
+	static void multiplicacion(int a, int b) {
+		System.out.println(a+" x "+b+" = "+(a*b));
+	}
+	
+	static void division(float a, float b) {
+		System.out.println(a+" / "+b+" = "+(a/b));
+	}
+	
+	static void exponente(int a, int b) {
+		System.out.println(a+" ^ "+b+" = "+(Math.pow(a, b)));
+	}
+
+
+
+
+
+	public static void main(String[] args) {
+		/*
+		 * Con 5 funciones y pidiendo 2 numeros programa que escriba el 
+		 * resultado de las
+		 * 5 operaciones aritmeticas entre ellos
+		 */
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Dame 2 numeros");
+		int a,b;
+		a = sc.nextInt();
+		b = sc.nextInt();
+		
+		suma(a,b);
+		resta(a,b);
+		multiplicacion(a,b);
+		division(a,b);
+		exponente(a,b);
+		
+	}
+
+}
+
+```
+
+### Operaciones varias Puertas Logicas
+
+```java
+public class nombre {
+
+
+		
+		static int funcion1(int n){
+			
+			
+			return (n/100);
+		}
+		
+		static int funcion2(int n){
+			
+			
+			return ((n/10)%10);
+		}
+		
+		static int funcion3(int n){
+			
+			
+			return (n%10);
+		}
+		
+		public static void main(String[] args) {
+			/*
+			 * Programa que pida 2 numeros de 3 cifras
+			 * 3 funciones que recibiran un numero. una devuelve las unidades otra las decenas
+			 * y otra las centenas
+			 * va a imprimir:
+			 * Operación AND(bits) de las tres cifras  del primero
+			 * Operación OR entre las centenas de cada uno
+			 * Operación XOR entre las dos últimas cifras del primero y segundo
+			 * Desplazamiento de las unidades del 1º en ese numero
+			 * Opreación NOT de las unidades de los 2
+			 */
+			
+			Scanner sc=new Scanner(System.in);
+			int num1, num2;
+			System.out.println("Teclea 2 numeros de 3 cifras");
+			num1=sc.nextInt();
+			num2=sc.nextInt();
+			
+			int a = funcion1(num1);
+			int b = funcion2(num1);
+			int c = funcion3(num1);
+			
+			int d = funcion1(num2);
+			int e = funcion2(num2);
+			int f = funcion3(num2);
+			
+			System.out.println(a&b&c);
+			System.out.println(a|d);
+			System.out.println((b*10)+c^(e*10)+f);
+			System.out.println();
+			System.out.println(~(c+f));
+			
+			System.out.println("Op. AND: "+((funcion1(num1)&funcion2(num1))&funcion3(num1)));
+			System.out.println("Op. OR: "+(funcion1(num1)|(funcion1(num2))));
+			System.out.println((funcion2(num1)*10+funcion3(num1))^(funcion2(num2)*10+funcion3(num2)));
+			System.out.println((num1)>>funcion1(num1));
+			System.out.println("Operador NOT:"+(~funcion3(num1))+" y "+(~funcion3(num2)));
+	
+			
+			
+			
+		
+	}
+
+}
+
+```
+
+### Ejercicio de repaso
+
+```java
+public class Repaso {
+
+	public static void main(String[] args) {
+		/*
+		 * Programa que reciba cantidad a repartir, 5 partes y peso de cada parte(100%).
+		 * un solo procedimiento con 6 argumentos (cant peso1 peso2 peso3 peso4 peso5)
+		 */
+
+		
+		
+	}
+
+}
 
 ```
