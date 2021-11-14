@@ -15,7 +15,11 @@ operador condicional ternario si es verdadera sentencia1 y si es falsa sentencia
 
 (expresion)? sentencia1: sentencia2;
 
-## Ejercicio Alquiler coche
+## Condicionales
+
+no tienen ningun orden en particular
+
+### Ejercicio Alquiler coche
 
 ```java
 public class AlquilerCoche {
@@ -67,12 +71,49 @@ public class AlquilerCoche {
 
 ```
 
-## Ejercicio Ascii
+### Ejercicio Ascii
 
 ```java
+	public static void main(String[] args) {
+		/*
+		 Pedir un numero entre 0 y 255 y castearlo a caracter y nos diga si es una letra un numero o un caracter especial
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int x = sc.nextInt();
+		
+		int a = 0;
+		
+		//letras 65 al 122
+		//numero 48 al 57
+		
+		if ((x >= 65 && x <= 90) || (x >= 97 && x <=122)) {
+			a = 1;
+		}
+		
+		if (x >= 48 && x <= 57) {
+			a = 2;
+		}
+		
+		switch (a) {
+		
+			case 1:
+				System.out.println("Es una letra");
+				break;
+			case 2:
+				System.out.println("Es un numero");
+			case 0:
+				System.out.println("Es un caracter especial");
+		
+		}
+		
+		
 
+
+	}
 ```
-## Condicionles
+### Ejercicio Condicionales
 
 ```java
 public class condicionales {
@@ -142,7 +183,7 @@ public class condicionales {
 
 ```
 
-## Ejercicio Cuenta / cuenta v2
+### Ejercicio Cuenta / cuenta v2
 
 ```java
 public class Cuenta {
@@ -269,7 +310,7 @@ public class Cuentav2 {
 
 ```
 
-## Ejercicio descuentos
+### Ejercicio descuentos
 
 ```java
 public class Descuentos {
@@ -310,7 +351,7 @@ public class Descuentos {
 
 ```
 
-## Ejercicio DNILetra
+### Ejercicio DNILetra
 
 ```java
 public class DniLetra {
@@ -427,7 +468,7 @@ public class DniLetra {
 
 ```
 
-## Ejercicio Mayor Edad
+### Ejercicio Mayor Edad
 
 ```java
 
@@ -456,7 +497,7 @@ public class MayorEdad {
 
 ```
 
-## Ejercicio Menu
+### Ejercicio Menu
 
 ```java
 public class Menu {
@@ -512,7 +553,7 @@ public class Menu {
 }
 ```
 
-## Ejercicio Millenial
+### Ejercicio Millenial
 
 ```java
 public class Millenial {
@@ -571,7 +612,7 @@ public class Millenial {
 }
 ```
 
-## Ejercicios varios notas
+### Ejercicios varios notas
 
 ```java
 public class Nota4Practicas {
@@ -708,7 +749,7 @@ static void notaBoletin(int nota) {
 
 ```
 
-## Ejercicio ParImpar
+### Ejercicio ParImpar
 
 ```java
 public class ParImpar {
@@ -762,7 +803,7 @@ public class ParImpar {
 
 ```
 
-## Ejercicio Poker
+### Ejercicio Poker
 
 ```java
 public class Poker {
@@ -812,7 +853,7 @@ public class Poker {
 
 ```
 
-## Ejercicio TipoTriangulo
+### Ejercicio TipoTriangulo
 
 ```java
 public class TipoTriangulo {
@@ -852,7 +893,7 @@ public class TipoTriangulo {
 
 ```
 
-## Ejercicio variado
+### Ejercicio variado
 
 ```java
 public class Varios {
@@ -921,3 +962,598 @@ public class Varios {
 }
 ```
 
+## Ejercicio AñoBisiesto
+
+````java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int año = sc.nextInt();
+		int mes = sc.nextInt();
+		boolean bisiesto=false;
+		
+		if (año%4==0) {
+			if (año%100!=0|año%400==0) {
+				bisiesto=true;
+			}
+		}
+		
+		if (bisiesto) {
+			System.out.println("El año es bisiesto");
+		} else {
+			System.out.println("El año es no bisiesto");
+		}
+		
+		switch (mes) {
+		case 1, 3, 5, 7, 8, 10,12:
+			System.out.println("31 dias");
+			break;
+		
+		case 2:
+			if (bisiesto) {
+				System.out.println("29 dias");
+			} else {
+				System.out.println("28 dias");
+			}
+			break;
+		default:
+			System.out.println("30 dias");
+			
+		}
+
+	}
+````
+
+### Ejercicio DomingoDePascua
+
+````java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int año = sc.nextInt();
+		int a, b, c, d, e, n;
+		
+		a = año % 19;
+		b = año % 4;
+		c = año % 7;
+		d = (19 * a +24)%30;
+		e = (2 * b + 4 * c + 6 * d + 5 ) % 7;
+		n = (22+d+e);
+		
+		if (n<=31) {
+			System.out.println("Domingo de resurreccion el "+n+" de Marzo");
+		} else {
+			System.out.println("Domingo de resurreccion el "+(n-31)+" de Abril");
+		}
+		
+
+	}
+````
+
+### Ejercicio NumLadosPerimetro
+
+````java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int lados = sc.nextInt();
+		
+		int longitud = sc.nextInt();
+		
+		switch (lados) {
+		
+		case 3:
+			System.out.println("triangulo");
+			System.out.println("perimetro = "+(longitud*3));
+		break;
+		
+		case 4:
+			System.out.println("Cuadrado");
+			System.out.println("perimetro = "+(longitud*4));
+		break;
+		
+		case 5:
+			System.out.println("Pentagono");
+			System.out.println("perimetro = "+(longitud*5));
+		break;
+		
+		default:
+			System.out.println("numero de lados no reconocido");
+		
+		}
+
+	}
+````
+
+## Strings
+
+String nombrevariable = "ValorDelString"
+
+no tienen ningun orden en particular
+
+### ejercicio OrdenApellidosNombre
+
+```java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//Con solo input y apellidos seria suficiente
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String input = sc.nextLine();
+		
+		int espacio = input.indexOf(' ');
+		
+		String nombre = input.substring(0, espacio);
+		
+		String apellidos = input.substring(espacio+1);
+		
+		int espacio2 = apellidos.indexOf(' ');
+		
+		String apellido1 = apellidos.substring(0, espacio2);
+		
+		String apellido2 = apellidos.substring(espacio2+1);
+		
+		System.out.println(apellido1+" "+apellido2+" "+nombre);
+		
+		//syso apellidos.substring(0, 1).toUpperCase()+apellidos.substring(
+		//+apellidos.substring(pos+1, pos+2).toUpperCase
+	}
+```
+
+### Ejercicio Subcadena
+
+````java
+	public static void main(String[] args) {
+		/*
+		 * Programa que compruebe si una cadena leida por teclado comienza por una subcadena pedida tambien por teclado
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String subcadena = sc.nextLine();
+		String cadena = sc.nextLine();
+		
+		int lengsub = subcadena.length();
+		String cortada = cadena.substring(0,lengsub);
+		
+		//if (cadena.substring(0, lengsub).equalsIgnoreCase(subcadena)) {
+		if (subcadena.toUpperCase().equals(cortada.toUpperCase())) {
+			
+			System.out.println("Correcto");
+		} else {
+			System.out.println("Incorrecto");
+		}
+
+	}
+````
+
+### Ejercicio InicioEnMayus
+
+````java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String input = sc.nextLine();
+		
+		int espacio = input.indexOf(' ');
+		
+		String nombre = input.substring(0, espacio);
+		
+		String apellidos = input.substring(espacio+1);
+		
+		int espacio2 = apellidos.indexOf(' ');
+		
+		String apellido1 = apellidos.substring(0, espacio2);
+		
+		String apellido2 = apellidos.substring(espacio2+1);
+		
+		char i1, i2, i3;
+		
+		i1=input.toUpperCase().charAt(0);
+		i2=apellido1.toUpperCase().charAt(0);
+		i3=apellido2.toUpperCase().charAt(0);
+		
+		
+		System.out.println(i1+"."+i2+"."+i3);
+		
+		
+	}
+````
+
+### Ejercicio NombreApellido
+
+````java
+	public static void main(String[] args) {
+		/*
+		 * Pedir nombre y apellido en una linea y el programa devolvera  D./Dña nombre y Sr./Sra apellido
+		 * nombre apellido 1 apellido2 con mayus en distintas lineas
+		 */
+
+		Scanner sc = new Scanner(System.in);
+		
+		String input = sc.nextLine();
+		
+		int espacio = input.indexOf(" ");
+		
+		String nombre = input.substring(0, espacio);
+		
+		String apellido = input.substring(espacio+1, input.length());
+		
+		int espacio2 = apellido.indexOf(" ");
+		
+		String apellido2 = apellido.substring(espacio2+1, apellido.length());
+		
+		String saludoHombre = "D."+nombre+", Sr."+apellido;
+		String saludoMujer = "Dña."+nombre+", Sra."+apellido;
+
+		System.out.println(saludoHombre);
+		System.out.println(saludoMujer);
+		
+		String nombreMayus = nombre.substring(0,1).toUpperCase().concat(nombre.substring(1, nombre.length()));
+		String apellidoMayus = apellido.substring(0,1).toUpperCase().concat(apellido.substring(1, apellido.length()));
+		String apellido2Mayus = apellido2.substring(0,1).toUpperCase().concat(apellido2.substring(1, apellido2.length()));
+		
+		System.out.println(nombreMayus);
+		System.out.println(apellidoMayus);
+		System.out.println(apellido2Mayus);
+		
+	}
+````
+
+### Ejercicio MayusEnFrase
+
+````java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String input = sc.nextLine();
+		
+		System.out.println(input.substring(0, 2).toUpperCase()+input.substring(2, input.length()-2)+input.substring(input.length()-2).toUpperCase());
+		
+	}
+
+````
+
+### Ejercicio InicioStrings
+
+````java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String saludo = "Hola, que tal?";
+		String despedida = " Hasta luego";
+		double total = 98.452543535;
+		
+		System.out.println(saludo+despedida);
+		System.out.println(saludo.concat(despedida));
+		System.out.println(saludo.charAt(6));
+		System.out.println(saludo.length());
+		
+		if (saludo.equals(despedida)) {
+			System.out.println("las cadenas son iguales");
+		} else {
+			System.out.println("las cadenas son diferentes");
+		}
+		
+		System.out.println(saludo.substring(6));
+		System.out.println(despedida.substring(5, 8));
+		System.out.println(saludo.toUpperCase());
+		System.out.println(despedida.toLowerCase());
+		
+		System.out.println(String.valueOf(total).substring(2, 5));
+		
+		System.out.println(saludo.indexOf("t"));
+		
+
+	}
+````
+
+## Bucles While
+
+no tienen un orden en concreto
+
+
+### Ejercicio CadenaEspacio
+
+````java
+	public static void main(String[] args) {
+		// Escriba caracter a caracter una cadena introducida por teclado
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String input = sc.nextLine();
+		
+		int aux = 0;
+		
+		while (aux<input.length()) {
+			System.out.print(input.charAt(aux)+"\t");
+			aux++;
+		}
+		
+	}
+````
+
+### Ejercicio CambioMayusMinus
+
+````java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		int aux = 0;
+		String input = sc.nextLine();
+		int contador=1;
+		
+		while (aux<input.length()) {
+			if (input.charAt(aux)==input.toUpperCase().charAt(aux)) {
+				System.out.print(input.toLowerCase().charAt(aux));
+			} else {
+				System.out.print(input.toUpperCase().charAt(aux));
+			}
+			aux++;
+		}
+		
+	}
+````
+
+### Ejercicio Capicua/Palindromo
+
+EN ESTE EJERCICIO FALTAN DEPURAR UN PAR DE COSAS (NO DA ERROR PERO NO FUNCIONA(NO DA LA SALIDA ESPERADA))
+
+````java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		String inputSpc = "";
+		int aux = inputSpc.length()-1;
+		int pos = 0;
+		
+		while (pos<input.length()) {
+			
+			if (input.charAt(pos) != ' ') {
+				inputSpc += input.charAt(pos);
+			}
+			
+			pos++;
+			
+		}
+		
+		
+		String reverseInput="";
+		
+		while (aux >= 0) {
+			
+			reverseInput += inputSpc.charAt(aux);
+			
+			aux--;
+		}
+		
+		if (inputSpc.equals(reverseInput)) {
+			System.out.println("Palindromo");
+		} else {
+			System.out.println("No es palindromo");
+		}
+		
+	}
+````
+
+### Ejercicio CuentaPalabra
+
+````java
+	public static void main(String[] args) {
+		// Programa que escriba el numero de palabras en una frase
+		
+		Scanner sc = new Scanner(System.in);
+		int aux = 0;
+		String input = sc.nextLine();
+		int contador=1;
+		
+		while (aux<input.length()) {
+			
+			if (input.charAt(aux) == ' ') {
+				contador++;
+			}
+			
+			aux++;
+		}
+		
+		System.out.println("hay "+contador+" palabras");
+
+	}
+
+````
+
+### Ejercicio CuentaAtras
+
+````java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("numero positivo?");
+		
+		int num = sc.nextInt();
+		
+		while (num>=1) {
+			System.out.println(num);
+			num--;
+		}
+
+	}
+````
+
+### Ejercicio HastaNegativo
+
+````java
+	public static void main(String[] args) {
+		// Program que pide numeros hasta que tecleemos uno negativo, devuelve la suma de los introducidos
+
+		Scanner sc = new Scanner(System.in);
+		
+		int num = sc.nextInt();
+		
+		int sumaTotal = 0;
+		
+		while (num>=0) {
+			sumaTotal=sumaTotal+num;
+			num = sc.nextInt();
+		}
+		
+		System.out.println(sumaTotal);
+		
+	}
+````
+
+### Ejercicio MediaNumeros
+
+````java
+	public static void main(String[] args) {
+		// Pedir 6 notas por teclado y calcular la media
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int num = 1;
+		
+		int sumaNotas = 0;
+		
+		while (num<=6) {
+			System.out.println("Introduzca una nota por favor");
+			
+			int nota = sc.nextInt();
+			
+			sumaNotas=sumaNotas+nota;
+			
+			num++;
+		}
+		
+		System.out.println("La media es: "+(sumaNotas/6));
+		
+	}
+````
+
+### Ejercicio SustituirEspacios
+
+Las lineas comentadas son de diferentes cosas pedidas en el ejercicio.
+
+````java
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		int aux = 0;
+		String input = sc.nextLine();
+		int contador=1;
+		
+		//cambias espacio en blanco por *
+		/*
+		while (aux<input.length()) {
+			
+			if (input.charAt(aux) == ' ') {
+				System.out.print('*');
+			} else {
+			System.out.print(input.charAt(aux));
+			}
+			
+			aux++;
+			
+		}
+		*/	
+			
+		//cambias las vocales minus a mayus
+		/*	
+		while (aux<input.length()) {	
+				
+		switch (input.charAt(aux)) {
+		
+		case 'a','e','i','o','u':
+			System.out.print(input.toUpperCase().charAt(aux));
+		break;
+		
+		default:
+			System.out.print(input.charAt(aux));
+		
+		}
+			aux++;
+		}
+		*/
+		
+		//borrar espacios en blanco
+		while (aux<input.length()) {
+			
+			if (input.charAt(aux) == ' ') {
+		
+			} else {
+			System.out.print(input.charAt(aux));
+			}
+			
+			aux++;
+			
+		}
+		
+		System.out.println("hay "+contador+" palabras");
+
+	}
+	
+````
+
+### Ejercicio VeintePrimeros
+
+````java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int num = 1;
+		
+		while (num <= 20) {
+			System.out.println(num);
+			num++;
+		}
+
+	}
+
+````
+
+### Ejercicio DeCincoCuentaAtras
+
+````java
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("numero multiplo de cinco?");
+		
+		int num = sc.nextInt();
+		
+		if (num%5!=0) {
+			System.out.println("el numero introducido no es multiplo de 5");
+			
+		} else {
+			
+			while (num>=0) {
+				
+				if (num%5==0) {
+					System.out.println(num);
+				}
+				num--;
+			}
+
+			
+		}
+	}
+````
