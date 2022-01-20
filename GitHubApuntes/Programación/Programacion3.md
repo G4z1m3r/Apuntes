@@ -1525,7 +1525,7 @@ public class Hexagono extends Poligono {
 public interface Calculo {
 
 	//por defecto es public static
-	// las constantes se declaran en mayus por combenio
+	// las constantes se declaran en mayus por convenio
 	public static final int DATO=0;
 	final int DATO1=1;
 	
